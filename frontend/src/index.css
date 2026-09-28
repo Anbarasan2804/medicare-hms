@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 250 250 251;
+  --card: 255 255 255;
+  --border: 228 229 233;
+  --text: 17 24 39;
+  --muted: 107 114 128;
+}
+
+.dark {
+  --bg: 15 17 21;
+  --card: 24 26 32;
+  --border: 39 42 51;
+  --text: 237 239 244;
+  --muted: 156 163 175;
+}
+
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--text));
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: rgb(var(--border)); border-radius: 8px; }
+
+@keyframes toast-in {
+  from { transform: translateY(-8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-toast-in { animation: toast-in 0.2s ease-out; }
